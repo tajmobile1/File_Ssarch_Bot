@@ -1,3 +1,21 @@
+Skip to content
+Sign up
+PR0FESS0R-99
+/
+Midukki-RoBoT
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Midukki-RoBoT/Midukki/__init__.py
+@PR0FESS0R-99
+PR0FESS0R-99 logger file added
+ 1 contributor
+120 lines (102 sloc)  4.06 KB
 import logging
 from aiohttp import web
 from os import environ
@@ -33,9 +51,9 @@ def who_is_creator(id1, id2):
   return text
     
 class Accounts(object):
-    API_ID = int(environ.get("API_ID", 0))
-    API_HASH = environ.get("API_HASH")
-    BOT_TOKEN = environ.get("BOT_TOKEN")
+    API_ID = int(environ.get("API_ID", "9738903"))
+    API_HASH = environ.get("API_HASH", "d05599b2b23fd03e208ca54a2ff93445")
+    BOT_TOKEN = environ.get("BOT_TOKEN", "5816129377:AAEKOQRUH1lSjWsXP-VwggybmDgOePQrH2E")
     BOT_PLUGINS = environ.get("BOT_PLUGINS", "Midukki")
     BOT_SESSIONS = environ.get("BOT_SESSION", "Midukki-RoboT")
 
@@ -56,24 +74,24 @@ class Customize(object):
 
 class Configs(object):
     # admins id
-    ADMINS_ID = [int(admin) if find.search(admin) else admin for admin in environ.get('ADMINS_ID', '5601313788').split()]
+    ADMINS_ID = [int(admin) if find.search(admin) else admin for admin in environ.get('ADMINS_ID', '1030188110').split()]
 
     # bot information   
     COMMAND_PREFIXES = environ.get("COMMAND_PREFIXES", "/")
     if environ.get("BOT_PICS"):
-        START_PICS = (environ.get("BOT_PICS", "https://telegra.ph/file/5ad2c57ae74bafb6efec1.jpg")).split()
+        START_PICS = (environ.get("BOT_PICS", "https://graph.org/file/b70db63ff80beee884c08.jpg")).split()
     START_MESSAGE = environ.get("START_MESSAGE", START_TXT)
 
     # MongoDB information
-    DATABASE_NAME = environ.get("DATABASE_NAME", "Muhammed")
-    DATABASE_URL = environ.get("DATABASE_URL", None)
+    DATABASE_NAME = environ.get("DATABASE_NAME", "TechnicalTaj")
+    DATABASE_URL = environ.get("DATABASE_URL", "Mongodb - mongodb+srv://filestore:filestore@cluster0.vnp4hkb.mongodb.net/?retryWrites=true&w=majority")
     COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
     # Groups & Channels
-    LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
-    SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/Mo_Tech_YT')
-    CHANNELS = [int(ch) if find.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
-    FORCE_SUB = environ.get('FORCE_SUB')
+    LOG_CHANNEL = int(environ.get('LOG_CHANNEL', "-1001903034185"))
+    SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/technicaltajrequestgroup')
+    CHANNELS = [int(ch) if find.search(ch) else ch for ch in environ.get('CHANNELS', '1001840215397').split()]
+    FORCE_SUB = environ.get('FORCE_SUB', "1001256648377")
     AUTH_CHANNEL = int(FORCE_SUB) if FORCE_SUB and find.search(FORCE_SUB) else None
     FORCES_SUB_LINK = environ.get('FORCE_SUB_LINK')
 
@@ -90,7 +108,7 @@ class Configs(object):
     WEB_API = environ.get("ADS_WEB_API")
 
     # other
-    DONATE_LINKS = environ.get("DONATION_LINK", "https://p.paytm.me/xCTH/7yzmtgie")
+    DONATE_LINKS = environ.get("DONATION_LINK", "https://p.payt")
     LOADING_SYMBOL = bool(environ.get("LOADING_MODE", True))
     LOADING_A = environ.get("LOADING_SYMBOL_A", "⚪️")
     LOADING_B = environ.get("LOADING_SYMBOL_B", "⚫️")
